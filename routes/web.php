@@ -11,10 +11,6 @@
 |
 */
 
-//$router->get('/', function () use ($router) {
-//    return $router->app->version();
-//});
-
 $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1',function ($api){
@@ -24,10 +20,10 @@ $api->version('v1',function ($api){
         Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException([],"Method Not Allowed");
     });
 
-    $api->get('students','App\Http\Controllers\StudentController@showAll');
-    $api->get('students/{id}','App\Http\Controllers\StudentController@show');
-    $api->post('students','App\Http\Controllers\StudentController@store');
-    $api->put('students/{id}','App\Http\Controllers\StudentController@update');
-    $api->delete('students/{id}','App\Http\Controllers\StudentController@destroy');
+    $api->get('mahasiswa','App\Http\Controllers\MahasiswaController@showAll');
+    $api->get('mahasiswa/{id}','App\Http\Controllers\MahasiswaController@show');
+    $api->post('mahasiswa','App\Http\Controllers\MahasiswaController@store');
+    $api->put('mahasiswa/{id}','App\Http\Controllers\MahasiswaController@update');
+    $api->delete('mahasiswa/{id}','App\Http\Controllers\MahasiswaController@destroy');
 
 });
