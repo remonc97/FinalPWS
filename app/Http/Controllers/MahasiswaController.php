@@ -13,10 +13,10 @@ class MahasiswaController extends Controller
     use Helpers;
 
     public function showAll(){
-        $Mahasiswas = Mahasiswa::all();
+        $Mahasiswa = Mahasiswa::all();
 
-        if($Mahasiswas){
-            return $this->response->collection($Mahasiswas,new MahasiswaTransformer);
+        if($Mahasiswa){
+            return $this->response->collection($Mahasiswa,new MahasiswaTransformer);
         }else{
             $this->response->errorNotFound('data tidak ditemukan');
         }
@@ -24,13 +24,13 @@ class MahasiswaController extends Controller
     }
     public function show($id){
         try{
-            $Mahasiswas = Mahasiswa::find($id);
+            $Mahasiswa = Mahasiswa::find($id);
         }catch (Exception $e){
             $this->response->error($e,500);
         }
 
-        if($Mahasiswas){
-            return $this->response->item($Mahasiswas,new MahasiswaTransformer);
+        if($Mahasiswa){
+            return $this->response->item($Mahasiswa,new MahasiswaTransformer);
         }else{
             $this->response->errorNotFound('data tidak ditemukan');
         }
@@ -42,7 +42,7 @@ class MahasiswaController extends Controller
             'peminatan','jurusan','angkatan'
         ]);
 
-        $Mahasiswas = new Mahasiswa([
+        $Mahasiswa = new Mahasiswa([
             'nim' => $data['nim'],
             'nama' => $data['nama'],
             'fakultas' => $data['fakultas'],
@@ -53,7 +53,7 @@ class MahasiswaController extends Controller
         ]);
 
         try{
-            $Mahasiswas->save();
+            $Mahasiswa->save();
         }catch (Exception $e){
             $this->response->error($e,500);
         }
@@ -65,7 +65,7 @@ class MahasiswaController extends Controller
     }
     public function update($id,Request $request){
         try{
-            $Mahasiswas = Mahasiswa::find($id);
+            $Mahasiswa = Mahasiswa::find($id);
         }catch (Exception $e){
             $this->response->error($e,500);
         }
@@ -75,7 +75,7 @@ class MahasiswaController extends Controller
             'peminatan','jurusan','angkatan'
         ]);
 
-        $Mahasiswas->fill([
+        $Mahasiswa->fill([
             'nim' => $data['nim'],
             'nama' => $data['nama'],
             'fakultas' => $data['fakultas'],
@@ -86,7 +86,7 @@ class MahasiswaController extends Controller
         ]);
 
         try{
-            $Mahasiswas->update();
+            $Mahasiswa->update();
         }catch (Exception $e){
             $this->response->error($e,500);
         }
@@ -95,13 +95,13 @@ class MahasiswaController extends Controller
     }
     public function destroy($id){
         try{
-            $Mahasiswas = Mahasiswa::find($id);
+            $Mahasiswa = Mahasiswa::find($id);
         }catch (Exception $e){
             $this->response->error($e,500);
         }
 
         try{
-            $Mahasiswas->delete();
+            $Mahasiswa->delete();
         }catch (Exception $e){
             $this->response->error($e,500);
         }

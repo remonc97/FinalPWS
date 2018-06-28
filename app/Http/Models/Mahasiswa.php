@@ -12,5 +12,5 @@ class Mahasiswa extends Model
         'nim','nama','fakultas','jurusan','peminatan','angkatan'
     ];
 
-    protected $guarded = ['id_mahasiswa'];
+    protected $guarded = ['id'];
 }

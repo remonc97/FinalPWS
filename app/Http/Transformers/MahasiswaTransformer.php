@@ -8,7 +8,7 @@ class MahasiswaTransformer extends TransformerAbstract
 {
     public function transform(Mahasiswa $field){
         return [
-            'id_mahasiswa' => $field->id_mahasiswa,
+            'id_mahasiswa' => $field->id,
             'nim' => $field->nim,
             'nama' => $field->nama,
             'fakultas' => $field->fakultas,

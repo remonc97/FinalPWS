@@ -20,10 +20,10 @@ $api->version('v1',function ($api){
         Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException([],"Method Not Allowed");
     });
 
-    $api->get('mahasiswa','App\Http\Controllers\MahasiswaController@showAll');
-    $api->get('mahasiswa/{id}','App\Http\Controllers\MahasiswaController@show');
-    $api->post('mahasiswa','App\Http\Controllers\MahasiswaController@store');
-    $api->put('mahasiswa/{id}','App\Http\Controllers\MahasiswaController@update');
-    $api->delete('mahasiswa/{id}','App\Http\Controllers\MahasiswaController@destroy');
+    $api->get('mahasiswas','App\Http\Controllers\MahasiswaController@showAll');
+    $api->get('mahasiswas/{id}','App\Http\Controllers\MahasiswaController@show');
+    $api->post('mahasiswas','App\Http\Controllers\MahasiswaController@store');
+    $api->put('mahasiswas/{id}','App\Http\Controllers\MahasiswaController@update');
+    $api->delete('mahasiswas/{id}','App\Http\Controllers\MahasiswaController@destroy');
 
 });
